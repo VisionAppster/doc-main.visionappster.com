@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/latest/*"
+  to = "/v3-0-0-beta5/:splat"
+  status = 307
+
+[[redirects]]
+  from = "/:version/*"
+  to = "https://:version.doc-va-git.xyz/:splat"
+  status = 200
+  force = true
