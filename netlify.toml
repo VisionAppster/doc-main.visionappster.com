@@ -1,10 +1,28 @@
+# This routes everythin under /latest/ to the current latest version.
+# The version number must be changed on each release. Since the
+# version number will be used as a domain name, prefix it with a "v"
+# and replace dots with dashes.
 [[redirects]]
   from = "/latest/*"
-  to = "/v3-0-0-beta5/:splat"
+  to = "/v3-0-beta5/:splat"
   status = 307
+  force = true
 
+# Configure a reverse proxy for published documentation versions. Each
+# released documentation version is in a different domain. There is
+# one of these sections for each release. Add a new section with the
+# latest version number whenever a release has been built.
 [[redirects]]
-  from = "/:version/*"
+  from = "/v3-0-beta5/*"
   to = "https://:version.doc-va-git.xyz/:splat"
   status = 200
+  force = true
+
+# This is the default redirect that catches requests whose URL does
+# not start with a known version number. They will be redirected to
+# the latest docs (which routes to the actual version number).
+[[redirects]]
+  from = "/*"
+  to = "/latest/:splat"
+  status = 301
   force = true
