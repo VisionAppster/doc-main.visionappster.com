@@ -1,11 +1,9 @@
 # This routes everything under /latest/ to the current latest version.
-# The version number must be changed on each release. Since the
-# version number will be used as a domain name, prefix it with a "v"
-# and replace dots with dashes.
+# The version number must be changed on each release.
 [[redirects]]
   from = "/latest/*"
-  to = "/v3-0-beta5/:splat"
-  status = 307
+  to = "/3.0-beta5/:splat"
+  status = 301
   force = true
 
 # INSERT NEW VERSION REDIRECT RULES BELOW THIS LINE
@@ -13,9 +11,11 @@
 # Configure a reverse proxy for published documentation versions. Each
 # released documentation version is in a different domain. There is
 # one of these sections for each release. Add a new section with the
-# latest version number whenever a release has been built.
+# latest version number whenever a release has been built. To convert
+# a version number to a subdomain, prefix it with a "v" and replace
+# dots with dashes.
 [[redirects]]
-  from = "/v3-0-beta5/*"
+  from = "/3.0-beta5/*"
   to = "https://v3-0-beta5.doc-va-git.xyz/:splat"
   status = 200
   force = true
