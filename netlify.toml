@@ -8,6 +8,12 @@
 
 # INSERT NEW VERSION REDIRECT RULES BELOW THIS LINE
 
+[[redirects]]
+  from = "/3.0-beta6/*"
+  to = "https://v3-0-beta6.doc-va-git.xyz/:splat"
+  status = 200
+  force = true
+
 # Configure a reverse proxy for published documentation versions. Each
 # released documentation version is in a different domain. There is
 # one of these sections for each release. Add a new section with the
