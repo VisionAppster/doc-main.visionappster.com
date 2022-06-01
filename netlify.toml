@@ -2,7 +2,7 @@
 # The version number must be changed on each release.
 [[redirects]]
   from = "/latest/*"
-  to = "/3.0-beta6/:splat"
+  to = "/3.0.0/:splat"
   status = 301
   force = true
 
