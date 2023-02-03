@@ -9,6 +9,12 @@
 # INSERT NEW VERSION REDIRECT RULES BELOW THIS LINE
 
 [[redirects]]
+  from = "/3.1.0/*"
+  to = "https://v3-1-0.doc-va-git.xyz/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/3.0.0/*"
   to = "https://v3-0-0.doc-va-git.xyz/:splat"
   status = 200
